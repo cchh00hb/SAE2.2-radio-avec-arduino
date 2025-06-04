@@ -15,7 +15,7 @@ uint8_t mp3buff[BUFFSIZE];
 
 int volume = 85;  // volume sonore 0 à 100
 
-#define NOMBRECHAINES 7 // nombre de chaînes prédéfinies
+#define NOMBRECHAINES 10 // nombre de chaînes prédéfinies
 int chaine = 0; //station actuellement sélectionnée
 
 //caractéristiques de la station actuellement sélectionnée
@@ -48,30 +48,39 @@ void connexionChaine () {
       httpPort = 8000;
       break;
 
-    case 3:
-      strcpy(host, "radios.rtbf.be");
-      strcpy(path, "/wr-c21-metal-128.mp3");
-      httpPort = 80;
-      break;
 
-    case 4:
+    case 3:
       strcpy(host, "ecoutez.chyz.ca");
       strcpy(path, "/mp3");
       httpPort = 8000;
       break;
 
-    case 5:
-      strcpy(host, "ice4.somafm.com");
-      strcpy(path, "/seventies-128-mp3");
+    case 4:
+      strcpy(host, "ais-edge83-jbmedia-nyc04.cdnstream.com");
+      strcpy(path, "/hot108");
       httpPort = 80;
       break;
 
+    case 5:
+     strcpy(host, "urbanhitrapfr.ice.infomaniak.ch");
+     strcpy(path, "/urbanhitrapfr-128.mp3");
+     httpPort = 80;
+     break;
+
     case 6:
-      strcpy(host, "lyon1ere.ice.infomaniak.ch");
-      strcpy(path, "/lyon1ere-high.mp3");
+     strcpy(host, "icecast.radiofrance.fr");
+     strcpy(path, "/mouvrapfr-midfi.mp3");
+     httpPort = 80;
+     break;
+
+    case 7:
+      strcpy(host, "cdn.nrjaudio.fm");
+      strcpy(path, "/adwz1/fr/30059/mp3_128.mp3");
       httpPort = 80;
       break;
+     
   }
+
 
   Serial.print("Connection a ");
   Serial.println(host);
