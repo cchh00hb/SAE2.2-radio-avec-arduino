@@ -1,11 +1,11 @@
 #include <VS1053.h>
 #include <WiFi.h>
+#include <WiFiManager.h>
 
 // Broches utilisées
 #define VS1053_CS     32
 #define VS1053_DCS    33
 #define VS1053_DREQ   15
-
 #define SCI_SPATIAL   0x0B  // Registre pour spatialisation
 
 // Réseau WiFi
@@ -101,8 +101,8 @@ void connexionChaine() {
       httpPort = 80;
       break;
     case 7:
-      strcpy(host, "cdn.nrjaudio.fm");
-      strcpy(path, "/adwz1/fr/30059/mp3_128.mp3");
+      strcpy(host, "icecast.skyrock.net");
+      strcpy(path, "/skyrock.mp3");
       httpPort = 80;
       break;
   }
