@@ -135,13 +135,11 @@ void setup() {
   Serial.println("\t d : Tonalité par défaut");
   Serial.println("\t s : Spatialisation");
 
-  WiFi.begin(ssid, password);
-  Serial.print("Connexion au réseau ");
-  Serial.println(ssid);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+WiFiManager wifiManager; 
+ if (!wifiManager.autoConnect("RadioESP32")) {
+   Serial.println("Échec de connexion WiFi");
+    delay(3000);
+    ESP.restart();
   }
 
   Serial.println("\nWiFi connecté !");
