@@ -9,8 +9,8 @@
 #define SCI_SPATIAL   0x0B  // Registre pour spatialisation
 
 // Réseau WiFi
-const char *ssid = "iPhone de Maimouna";
-const char *password = "Mounasse22";
+const char *ssid = "iPhone de Chahinez";
+const char *password = "Saluttoutlemonde";
 
 #define BUFFSIZE 64
 uint8_t mp3buff[BUFFSIZE];
